@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz de personnalité</title>
+</head>
+<body>
+
+    <div ng-controller="firstCtrl">
+        <h1>{{test}}</h1>
+
+            <form action=""  ng-repeat ="question in questions">
+                <p>{{$index}} - {{question.label}}</p>
+
+                    <li ng-repeat="(key, value) in question.response">
+                        <label>
+                            <input type="checkbox" checklist-model="types"
+                                   checklist-value="key">
+                            {{value.text}}
+                        </label>
+
+                    </li>
+
+            </form>
+    <button ng-click="validate()">Valider</button>
+
+    </div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

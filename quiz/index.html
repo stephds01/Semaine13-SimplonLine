@@ -7,23 +7,19 @@
 <body>
 
     <div ng-controller="firstCtrl">
-        <h1>{{test}}</h1>
+        <h1>{{title}}</h1>
 
             <form action=""  ng-repeat ="question in questions">
                 <p>{{$index}} - {{question.label}}</p>
 
-                    <li ng-repeat="(key, value) in question.response">
+                    <li ng-repeat="(key, response) in question.response">
                         <label>
-                            <input type="checkbox" checklist-model="types"
-                                   checklist-value="key">
-                            {{value.text}}
+                            <input type="checkbox" value="{{response}}" check-list="checked_value">
+                            {{response.text}}
                         </label>
-
                     </li>
-
             </form>
-    <button ng-click="validate()">Valider</button>
-
+        <button ng-click="addResponse(response)" >Valider</button>
     </div>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
 <script type="text/javascript" src="js/script.js"></script>

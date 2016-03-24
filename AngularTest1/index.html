@@ -9,18 +9,25 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!--    Controller du container-->
+
+    <!--    Controller du container 'app'-->
     <section class="container" ng-controller="movieController">
 
-        <!--//Header-->
+        <!--//Menu-->
+        <div ng-controller="MenuController">
+            <div ng-include="'app/partials/menu.html'"></div>
+            </div>
+
+
+            <!--//Header-->
         <div ng-controller="HeaderController">
             <div ng-include="'app/partials/header.html'"></div>
         </div>
 
 
         <!--//Content-->
-        <div ng-controller="ContentController">
-            <div ng-include="'app/partials/content.html'"></div>>
+        <div ng-view="ContentController">
+            <div ng-include="'app/partials/content.html'"></div>
         </div>
 
         <!--Alert qui est caché par default-->
@@ -91,6 +98,7 @@
 <script src="js/controllers/movieFormController.js"></script>
 <script src="js/controllers/HeaderController.js"></script>
 <script src="js/controllers/ContentController.js"></script>
+<script src="js/controllers/MenuController.js"></script>
 <script src="js/factories/movies.js"></script>
 </body>
 </html>

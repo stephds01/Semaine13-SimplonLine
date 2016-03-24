@@ -3,3 +3,8 @@
  */
 
 var myApp = angular.module('myApp', []);
+
+//myApp.config(function($routeProvider) {
+//    /*  Configuration des routes    */
+//
+//});

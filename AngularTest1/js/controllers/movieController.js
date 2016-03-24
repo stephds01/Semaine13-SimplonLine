@@ -34,9 +34,6 @@ myApp.controller('movieController', function($scope,$http) {
             //console.log($scope.movies[0]);
             //console.log(status);
 
-            $scope.$on('sendMovie', function(event, movie) {
-                $scope.movies.push(movie);
-            });
 
         }).error(function(data,statusText) {
             $scope.error = statusText;
